@@ -1,37 +1,72 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Title>LSQSolver.MathNet</Title>
-    <Version>1.0.0</Version>
-    <Authors>TaigaNakano</Authors>
-    <Copyright>TaigaNakano</Copyright>
-    <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageTags>MathNet.Numerics; LSQSolver; Least Square</PackageTags>
-    <PackageProjectUrl>https://github.com/TaigaNakano/LSQSolver.MathNet</PackageProjectUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/TaigaNakano/LSQSolver.MathNet</RepositoryUrl>
-    <PackageIcon>Assets/Project_icon.png</PackageIcon>
-    <Description>A rank-aware least-squares extension for Math.NET Numerics, supporting overdetermined, underdetermined, and rank-deficient systems with minimum-norm solutions.</Description>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
 
-  <ItemGroup>
-    <PackageReference Include="LSQSolver" Version="1.0.5" />
-    <PackageReference Include="LSQSolver.Complex" Version="1.0.0" />
-    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
-  </ItemGroup>
+		<PackageId>LSQSolver.MathNet</PackageId>
+		<Title>LSQSolver.MathNet</Title>
+		<Version>1.0.0</Version>
+		<Authors>TaigaNakano</Authors>
+		<Copyright>Copyright © TaigaNakano</Copyright>
 
-  <ItemGroup>
-    <None Update="Assets\Project_icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+		<Description>A rank-aware least-squares extension for Math.NET Numerics, supporting overdetermined, underdetermined, and rank-deficient systems with minimum-norm solutions.</Description>
+
+		<PackageTags>MathNet.Numerics;LSQSolver;least-squares;linear-algebra;minimum-norm;rank-deficient;underdetermined</PackageTags>
+		<PackageReleaseNotes>Initial release of LSQSolver.MathNet.</PackageReleaseNotes>
+
+		<PackageProjectUrl>https://github.com/TaigaNakano/LSQSolver.MathNet</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/TaigaNakano/LSQSolver.MathNet</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>Project_icon.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="LSQSolver"
+						  Version="1.0.5" />
+
+		<PackageReference Include="LSQSolver.Complex"
+						  Version="1.0.0" />
+
+		<PackageReference Include="MathNet.Numerics"
+						  Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!--
+      Remove the files automatically registered by the SDK.
+      They are explicitly re-added below with NuGet Pack metadata.
+    -->
+		<None Remove="Assets/Project_icon.png" />
+		<None Remove="README.md" />
+
+		<!--
+      Source:
+        Assets/Project_icon.png
+
+      Location inside the NuGet package:
+        /Project_icon.png
+    -->
+		<None Include="$(MSBuildProjectDirectory)/Assets/Project_icon.png">
+			<Pack>true</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+
+		<!--
+      Source:
+        README.md
+
+      Location inside the NuGet package:
+        /README.md
+    -->
+		<None Include="$(MSBuildProjectDirectory)/README.md">
+			<Pack>true</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>
