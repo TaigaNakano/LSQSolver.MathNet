@@ -6,12 +6,32 @@
     <Nullable>enable</Nullable>
     <Title>LSQSolver.MathNet</Title>
     <Version>1.0.0</Version>
+    <Authors>TaigaNakano</Authors>
+    <Copyright>TaigaNakano</Copyright>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageTags>MathNet.Numerics; LSQSolver; Least Square</PackageTags>
+    <PackageProjectUrl>https://github.com/TaigaNakano/LSQSolver.MathNet</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/TaigaNakano/LSQSolver.MathNet</RepositoryUrl>
+    <PackageIcon>Project_icon.png</PackageIcon>
+    <Description>A rank-aware least-squares extension for Math.NET Numerics, supporting overdetermined, underdetermined, and rank-deficient systems with minimum-norm solutions.</Description>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="LSQSolver" Version="1.0.5" />
     <PackageReference Include="LSQSolver.Complex" Version="1.0.0" />
     <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\Project_icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

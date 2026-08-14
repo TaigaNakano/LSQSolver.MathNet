@@ -1,6 +1,6 @@
 # LSQSolver.MathNet
 
-[日本語版](LSQSolver.MathNet-README.ja.md)
+[日本語版](https://github.com/TaigaNakano/LSQSolver.MathNet/blob/master/README_jp.md)
 
 `LSQSolver.MathNet` adds MathNet.Numerics extension methods for solving dense real and complex least-squares problems with [LSQSolver](https://github.com/TaigaNakano/LSQSolver).
 

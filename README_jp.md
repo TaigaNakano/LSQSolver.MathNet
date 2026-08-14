@@ -1,6 +1,6 @@
 # LSQSolver.MathNet
 
-[English version](LSQSolver.MathNet-README.md)
+[English version](https://github.com/TaigaNakano/LSQSolver.MathNet/blob/master/README.md)
 
 `LSQSolver.MathNet`は、[LSQSolver](https://github.com/TaigaNakano/LSQSolver)をMathNet.Numericsの行列・ベクトルから利用するための拡張メソッドを提供します。実数および複素数の密行列最小二乗問題に対応します。
 
