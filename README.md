@@ -119,7 +119,7 @@ $$
 If the minimizer is not unique, the solver selects a minimum-2-norm solution:
 
 $$
-\min \{\|x\|_2 : x \in \operatorname*{argmin}_y \|Ay-b\|_2\}.
+\min \{\|x\|_2 : x \in \mbox{argmin}_y \|Ay-b\|_2\}.
 $$
 
 The same interpretation is used for overdetermined, underdetermined, and numerically rank-deficient systems.
