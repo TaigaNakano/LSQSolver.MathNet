@@ -13,6 +13,8 @@
 
 正則な正方行列では、通常、MathNet.Numericsの最適化された`Solve(...)`を使用する方が適切であり、大幅に高速な場合があります。このパッケージの目的はMathNetのLUソルバーを置き換えることではなく、行列の形状や数値ランクによらず一貫した意味で最小二乗問題を扱えるようにすることです。
 
+**関連プロジェクト:** [LSQSolver](https://github.com/TaigaNakano/LSQSolver) · [LSQSolver.Complex](https://github.com/TaigaNakano/LSQSolver.Complex) · [LSQSolver.MathNet](https://github.com/TaigaNakano/LSQSolver.MathNet)
+
 ## インストール
 
 ```bash
@@ -146,11 +148,11 @@ MathNet.Numericsには、明示的な代替手段としてSVDおよび`PseudoInv
 
 | 問題 | 推奨される方法 |
 | --- | --- |
-| 正則な正方行列 | 最適化されたLU経路を使用するMathNetの`A.Solve(b)`を優先します。 |
+| 正則な正方行列 | 最適化されたLU分解を使用するMathNetの`A.Solve(b)`を優先します。 |
 | 列フルランクの過決定問題 | どちらも候補になります。実際の問題で性能と精度を比較してください。 |
 | 劣決定問題 | 最小2ノルム解が必要な場合は`SolveByLSQSolver`を使用します。 |
 | ランク落ち最小二乗問題 | ランクを考慮した最小ノルム処理が必要な場合は`SolveByLSQSolver`を使用します。 |
-| 擬似逆行列そのものが必要 | MathNetの`PseudoInverse()`を検討してください。本パッケージを逆行列演算として使用しないでください。 |
+| 擬似逆行列そのものが必要 | 疑似逆行列にはMathNetのPseudoInverse()も検討してください。本パッケージでも`A.SolveByLSQSolver(Matrix<double>.Build.DenseIdentity(A.RowCount))`により構成できますが、性能と精度は実際の問題で比較してください。Ax=bの求解では、疑似逆行列の明示的な構成は速度とメモリの面で不利です。|
 
 ## 数値計算上の注意
 
@@ -158,6 +160,14 @@ MathNet.Numericsには、明示的な代替手段としてSVDおよび`PseudoInv
 - 最小ノルム解は数学的な解選択規則であり、逆問題に対する物理的な事前情報として常に適切とは限りません。
 - 著しいスケーリングまたは悪条件性がある場合、正規化、正則化、あるいはSVDベースの解法が必要になることがあります。
 - 診断結果を利用する場合は、必ず返されたステータスを確認してください。
+
+## 関連プロジェクト
+
+| プロジェクト | 概要 |
+|---|---|
+| [LSQSolver](https://github.com/TaigaNakano/LSQSolver) | 実数の密行列問題に対応した、数値ランクを考慮する最小二乗ソルバー本体です。 |
+| [LSQSolver.Complex](https://github.com/TaigaNakano/LSQSolver.Complex) | LSQSolverを利用して複素最小二乗問題に対応する拡張ライブラリです。 |
+| [LSQSolver.MathNet](https://github.com/TaigaNakano/LSQSolver.MathNet) | 実数・複素数の最小二乗問題をMathNet.Numericsから扱うための連携ライブラリです。 |
 
 ## ライセンス
 
