@@ -148,11 +148,12 @@ MathNet.Numerics also provides SVD and `PseudoInverse()` as explicit alternative
 
 | Problem | Suggested approach |
 | --- | --- |
-| Regular square system | Prefer MathNet `A.Solve(b)` for its optimized LU path. |
+| Regular square system | Prefer MathNet `A.Solve(b)` for its optimized LU factorization. |
 | Full-column-rank overdetermined system | Either solver may be appropriate; benchmark the actual workload. |
 | Underdetermined system | Use `SolveByLSQSolver` when a minimum-2-norm solution is required. |
 | Rank-deficient least-squares system | Use `SolveByLSQSolver` when rank-aware minimum-norm handling is required. |
-| Explicit pseudoinverse required | Consider MathNet `PseudoInverse()`; do not use this package as an inverse operation. |
+| Explicit pseudoinverse required |For pseudoinverses, also consider MathNet's `PseudoInverse()`. This package can construct one using `A.SolveByLSQSolver(Matrix<double>.Build.DenseIdentity(A.RowCount))`, but compare its performance and accuracy for your problem. When solving `Ax=b`, explicitly forming the pseudoinverse is slower and requires more memory.
+|
 
 ## Numerical considerations
 
