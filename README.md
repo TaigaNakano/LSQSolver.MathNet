@@ -13,6 +13,8 @@ It is intended especially for cases that are not naturally covered by the standa
 
 For regular square systems, MathNet.Numerics' optimized `Solve(...)` is usually the better choice and may be substantially faster. This package provides consistent least-squares semantics across matrix shapes and numerical ranks; it is not a replacement for MathNet's optimized LU solver.
 
+**Related projects:** [LSQSolver](https://github.com/TaigaNakano/LSQSolver) · [LSQSolver.Complex](https://github.com/TaigaNakano/LSQSolver.Complex) · [LSQSolver.MathNet](https://github.com/TaigaNakano/LSQSolver.MathNet)
+
 ## Installation
 
 ```bash
@@ -158,6 +160,14 @@ MathNet.Numerics also provides SVD and `PseudoInverse()` as explicit alternative
 - A minimum-norm solution is a mathematical selection rule, not necessarily the appropriate physical prior for an inverse problem.
 - Severe scaling or conditioning problems may require normalization, regularization, or an SVD-based method.
 - Always inspect the returned status before relying on a diagnostic result.
+
+## Related Projects
+
+| Project | Description |
+|---|---|
+| [LSQSolver](https://github.com/TaigaNakano/LSQSolver) | The core rank-aware least-squares solver for real-valued dense problems. |
+| [LSQSolver.Complex](https://github.com/TaigaNakano/LSQSolver.Complex) | Complex-valued least-squares support built on LSQSolver. |
+| [LSQSolver.MathNet](https://github.com/TaigaNakano/LSQSolver.MathNet) | MathNet.Numerics integration for real and complex least-squares problems. |
 
 ## License
 
